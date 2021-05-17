@@ -1,0 +1,29 @@
+CREATE DATABASE Desafio2;
+
+CREATE TABLE Cliente (
+	id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    nome varchar(50) NOT NULL
+);
+
+CREATE TABLE Anuncio (
+	id int NOT NULL auto_increment primary KEY,
+    anuncio varchar(100) NOT NULL,
+    dataInicio date NOT NULL,
+    dataFinal date NOT NULL,
+    investimentoDiario double,
+    idCliente int
+);
+
+ALTER TABLE anuncio 
+ADD CONSTRAINT fkCliente
+FOREIGN KEY (idCliente) REFERENCES Cliente(id); 
+
+INSERT INTO Cliente (nome) values ('Paulo'), ('João'), ('José');
+
+INSERT INTO Anuncio (anuncio, dataInicio, dataFinal, investimentoDiario, idCliente)
+VALUES ('DA MANHÃ', '2021/05/20', '2021/05/23', 10.0, 1);
+
+INSERT INTO Anuncio (anuncio, dataInicio, dataFinal, investimentoDiario, idCliente)
+VALUES ('DA MANHÃ', '2021/05/25', '2021/05/26', 50.0, 1),
+('MEIO-DIA', '2021/05/28', '2021/05/31', 85.0, 2),
+('DOMINGO ESPETACULAR', '2021/06/05', '2021/06/15', 100.0, 3);
