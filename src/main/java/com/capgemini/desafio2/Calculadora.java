@@ -3,7 +3,7 @@ package com.capgemini.desafio2;
 import javax.swing.JOptionPane;
 
 /**
- * Calculadora de An�ncios Online
+ * Calculadora de Anúncios Online
  * 
  * O PROBLEMA
  * 
