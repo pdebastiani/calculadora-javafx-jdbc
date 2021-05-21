@@ -3,6 +3,12 @@ package com.capgemini.model.entities;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * Entidade do tipo Anuncio.
+ * 
+ * @author Paulo Sergio Debastiani <paulo.s.debastiani@gmail.com>
+ *
+ */
 public class Anuncio implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -15,9 +21,22 @@ public class Anuncio implements Serializable {
 	
 	private Cliente cliente;
 	
+	/**
+	 * método construtor vazio.
+	 */
 	public Anuncio() {
 	}
 
+	/**
+	 * Método construtor de todos os atributos.
+	 * 
+	 * @param id
+	 * @param anuncio
+	 * @param dataInicio
+	 * @param dataFinal
+	 * @param investimentoDiario
+	 * @param cliente
+	 */
 	public Anuncio(Integer id, String anuncio, Date dataInicio, Date dataFinal, Double investimentoDiario, Cliente cliente) {
 		this.id = id;
 		this.anuncio = anuncio;

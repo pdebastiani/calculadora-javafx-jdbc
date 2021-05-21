@@ -2,6 +2,12 @@ package com.capgemini.model.entities;
 
 import java.io.Serializable;
 
+/**
+ * Entidade do tipo Cliente.
+ * 
+ * @author Paulo Sergio Debastiani <paulo.s.debastiani@gmail.com>
+ *
+ */
 public class Cliente implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -9,9 +15,18 @@ public class Cliente implements Serializable {
 	private Integer id;
 	private String nome;
 	
+	/**
+	 * Método construtor vazio.
+	 */
 	public Cliente() {
 	}
 
+	/**
+	 * Método construtor de todos os atributos.
+	 * 
+	 * @param id
+	 * @param nome
+	 */
 	public Cliente(Integer id, String nome) {
 		this.id = id;
 		this.nome = nome;

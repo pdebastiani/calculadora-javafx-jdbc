@@ -14,14 +14,30 @@ import com.capgemini.db.DbIntegrityException;
 import com.capgemini.model.dao.ClienteDao;
 import com.capgemini.model.entities.Cliente;
 
+/**
+ * Classe dDAO da Entidade Cliente.
+ * 
+ * @author Paulo Sergio Debastiani <paulo.s.debastiani@gmail.com>
+ *
+ */
 public class ClienteDaoJDBC implements ClienteDao {
 
 	private Connection conn;
 	
+	/**
+	 * Recupera a instância do Cliente no BD.
+	 * 
+	 * @param conn
+	 */
 	public ClienteDaoJDBC(Connection conn) {
 		this.conn = conn;
 	}
 	
+	/**
+	 * Recupera um Cliente cfe Id passado no parâmetro.
+	 * 
+	 * Return objeto Cliente.
+	 */
 	@Override
 	public Cliente findById(Integer id) {
 		PreparedStatement st = null;
@@ -48,6 +64,11 @@ public class ClienteDaoJDBC implements ClienteDao {
 		}
 	}
 
+	/**
+	 * Recupera uma Lista de Cliente (todos)
+	 * 
+	 * @return uma Lista do tipo Cliente.
+	 */
 	@Override
 	public List<Cliente> findAll() {
 		PreparedStatement st = null;
@@ -76,6 +97,9 @@ public class ClienteDaoJDBC implements ClienteDao {
 		}
 	}
 
+	/**
+	 * Insere um objeto do tipo Cliente, que foi passado por parâmetro, no BD.
+	 */
 	@Override
 	public void insert(Cliente obj) {
 		PreparedStatement st = null;
@@ -110,6 +134,9 @@ public class ClienteDaoJDBC implements ClienteDao {
 		}
 	}
 
+	/**
+	 * Altera o registro de um Cliente.
+	 */
 	@Override
 	public void update(Cliente obj) {
 		PreparedStatement st = null;
@@ -132,6 +159,9 @@ public class ClienteDaoJDBC implements ClienteDao {
 		}
 	}
 
+	/**
+	 * Deleta um determinado Cliente, cfe. Id passado no parâmetro.
+	 */
 	@Override
 	public void deleteById(Integer id) {
 		PreparedStatement st = null;

@@ -18,14 +18,28 @@ import com.capgemini.model.dao.AnuncioDao;
 import com.capgemini.model.entities.Cliente;
 import com.capgemini.model.entities.Anuncio;
 
+/**
+ * Classe DAO da Entidade Anuncio.
+ * 
+ * @author Paulo Sergio Debastiani <paulo.s.debastiani@gmail.com>
+ *
+ */
 public class AnuncioDaoJDBC implements AnuncioDao {
 
 	private Connection conn;
 	
+	/**
+	 * Recupera a instância com o BD.
+	 * 
+	 * @param conn
+	 */
 	public AnuncioDaoJDBC(Connection conn) {
 		this.conn = conn;
 	}
 	
+	/**
+	 * Insere um novo registro no BD.
+	 */
 	@Override
 	public void insert(Anuncio obj) {
 		PreparedStatement st = null;
@@ -65,6 +79,9 @@ public class AnuncioDaoJDBC implements AnuncioDao {
 		}
 	}
 
+	/**
+	 * Altera um registro do BD.
+	 */
 	@Override
 	public void update(Anuncio obj) {
 		PreparedStatement st = null;
@@ -91,6 +108,9 @@ public class AnuncioDaoJDBC implements AnuncioDao {
 		}
 	}
 
+	/**
+	 * Deleta um registro no BD.
+	 */
 	@Override
 	public void deleteById(Integer id) {
 		PreparedStatement st = null;
@@ -109,6 +129,11 @@ public class AnuncioDaoJDBC implements AnuncioDao {
 		}
 	}
 
+	/**
+	 * Recupera um registro d BD, cfe. Parâmetro ID.
+	 * 
+	 * @return um objeto do tipo Anuncio cfe Id passado por parâmetro.
+	 */
 	@Override
 	public Anuncio findById(Integer id) {
 		PreparedStatement st = null;
@@ -156,6 +181,11 @@ public class AnuncioDaoJDBC implements AnuncioDao {
 		return cli;
 	}
 
+	/**
+	 * Recupera uma Lista do objeto Anuncio
+	 * 
+	 * @return 
+	 */
 	@Override
 	public List<Anuncio> findAll() {
 		PreparedStatement st = null;
@@ -195,6 +225,11 @@ public class AnuncioDaoJDBC implements AnuncioDao {
 		}
 	}
 
+	/**
+	 * Recupera uma Lista do tipo Anuncio cfe. Objeto Cliente
+	 * 
+	 * @return uma Lista de Anuncio de um determinado Cliente
+	 */
 	@Override
 	public List<Anuncio> findByCliente(Cliente cliente) {
 		PreparedStatement st = null;
